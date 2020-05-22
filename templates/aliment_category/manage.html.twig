@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{# {{ dump(all_aliments) }} #}
+	<h1>My Diet Tracking Tool</h1>
+	<hr class="title"/>
+	<h2>Aliment list</h1>
+	<form name="form" method="post">
+		<div class="form-inline">
+			<button class="btn btn-primary my-1 mr-2" type="submit" id="form_aliment_category_cancel" name="form[aliment_category][cancel]" formnovalidate="formnovalidate">Back</button>			
+		</div>
+		<fieldset class="border p-2">
+	   		<legend  class="w-auto">Add aliment</legend>
+	   		<div class="form-inline">
+				<label class="my-1 mr-2">Name: </label>
+				<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_aliment_category_description" name="form[aliment_category][description]" required="required" value="{{ form.aliment_category.description.vars.value }}" />
+				<label class="my-1 mr-2">Gr prot /100g: </label>
+				<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_aliment_category_g_pro" name="form[aliment_category][g_pro]" required="required" value="{{ form.aliment_category.g_pro.vars.value }}" />
+				<label class="my-1 mr-2">Gr hydr /100g: </label>
+				<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_aliment_category_g_hyd" name="form[aliment_category][g_hyd]" required="required" value="{{ form.aliment_category.g_hyd.vars.value }}" />
+				<label class="my-1 mr-2">Gr fats /100g: </label>
+				<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_aliment_category_g_fat" name="form[aliment_category][g_fat]" required="required" value="{{ form.aliment_category.g_fat.vars.value }}" />
+				<label class="my-1 mr-2">Kcal /100g: </label>
+				<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_aliment_category_ene" name="form[aliment_category][ene]" required="required" value="{{ form.aliment_category.ene.vars.value }}" />
+			</div>
+			<div class="form-inline">
+				<button class="btn btn-primary my-1 mr-2" type="submit" id="form_aliment_category_add" name="form[aliment_category][add]">Add</button>				
+			</div>
+		</fieldset>
+		<fieldset class="border p-2">
+	   		<legend  class="w-auto">Remove aliment</legend>
+	   		{% set alimentCounter = 0 %}
+	   		{% for aliment in all_aliments %}
+		   		<div class="form-check">
+		   			<input type="checkbox" id="form_aliment_category_selectedAlimentCategories_{{ alimentCounter }}" name="form[aliment_category][selectedAlimentCategories][]" value="{{ aliment.id }}">	
+		   			<label class="my-1">
+		   				{{ aliment.description }}:  
+						{{ aliment.gpro | round(0) }} g pro.,  
+						{{ aliment.ghyd | round(0) }} g glu.,  
+						{{ aliment.gfat | round(0) }} g lip.,  
+						{{ aliment.ene | round(0) }} kcal  
+		   			</label>
+		   		</div>
+		   		{% set alimentCounter = alimentCounter + 1 %}
+	   		{% endfor %}
+	   		<div class="form-inline">
+				<button class="btn btn-primary my-1 mr-2" type="submit" id="form_aliment_category_delete" name="form[aliment_category][delete]" formnovalidate="formnovalidate">Remove</button>
+		   		<font color="red"><label class="my-1 mr-2">Remove the selected aliments!</label></font>
+		   	</div>
+	   	</fieldset>
+		{{ form_widget(form._token) }}
+	</form>
+
+{% endblock %}
