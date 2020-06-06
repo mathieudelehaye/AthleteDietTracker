@@ -1,6 +1,10 @@
 # Diet_track_PHP
 An application in PHP with Symfony and Bootstrap 4 to track diet calories. 
 
+Screenshot: 
+
+<img src="Image 6-6-20 at 12.55 PM.jpeg" alt="App_screenshot" style="float: left; margin-right: 10px;" width="800"/>
+
 Run it: 
 
 php composer.phar install
@@ -28,6 +32,3 @@ Clear Symfony cache:
 php bin/console cache:clear 
 ```
 
-Screenshot: 
-
-<img src="Image 6-6-20 at 12.55 PM.jpeg" alt="App_screenshot" style="float: left; margin-right: 10px;" width="800"/>
