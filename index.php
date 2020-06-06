@@ -9,7 +9,7 @@ require __DIR__.'/vendor/autoload.php';
     
 // display query string 
 // echo("query string: ".$_SERVER['QUERY_STRING']);
-// exit(); 
+// exit();
 
 // The check is to ensure we don't use .env in production
 if (!isset($_SERVER['APP_ENV'])) {
@@ -18,7 +18,7 @@ if (!isset($_SERVER['APP_ENV'])) {
     }
     (new Dotenv())->load(__DIR__.'/.env');
 }
-
+    
 $env = $_SERVER['APP_ENV'] ?? 'dev';
 $debug = (bool) ($_SERVER['APP_DEBUG'] ?? ('prod' !== $env));
 
@@ -27,7 +27,7 @@ if ($debug) {
 
     Debug::enable();
 }
-
+    
 if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? false) {
     Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
 }
@@ -38,6 +38,7 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
+//echo($request);
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);

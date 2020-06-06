@@ -10,8 +10,7 @@
 {% endblock %}
 
 {% block body %}
-	<!-- <button class="btn btn-primary my-1 mr-2" onclick="pushURL();">Test js</button> -->
-	<h1>My Diet Tracking Tool</h1>
+	<h1>My Diet Tracking</h1>
 	<hr class="title"/>
 	<a href="../../../../../manage_aliments">Aliment list</a>
 	<br/><br/>
@@ -28,7 +27,7 @@
 			<input class="form-control my-1 mr-2 col-md-1" type="text" id="form_athlete_weight" name="form[athlete][weight]" required="required" value="{{ form.athlete.weight.vars.value }}" />
 			<label class="my-1 mr-3">kg</label>
 			<font color="red"><label class="my-1 mr-2">
-			kcal semaine = {{ macros['week']['ene'] | round(0) }}</label></font>
+			week kcal = {{ macros['week']['ene'] | round(0) }}</label></font>
 		</div>
 		<div class="form-inline">
 			<button class="btn btn-primary my-1 mr-2" type="submit" id="form_athlete_add_day" name="form[athlete][add_day]">Add day</button>
@@ -67,9 +66,9 @@
 							g hydr = {{ macros['days'][day.position - 1]['g_hyd'] | round(0) }}, 
 							g fats = {{ macros['days'][day.position - 1]['g_fat'] | round(0) }}</label></font>
 							<font color="green"><label class="my-1">
-							, g prot par kg m. corp. = {{ macros['days'][day.position - 1]['g_pro_per_kg'] | round(1) }}, 
-							g hydr par kg m. corp. = {{ macros['days'][day.position - 1]['g_hyd_per_kg'] | round(1) }}, 
-							g fats par kg m. corp. = {{ macros['days'][day.position - 1]['g_fat_per_kg'] | round(1) }}</label></font>
+							, g prot by body weight kg = {{ macros['days'][day.position - 1]['g_pro_per_kg'] | round(1) }},
+							g hydr by body weight kg = {{ macros['days'][day.position - 1]['g_hyd_per_kg'] | round(1) }},
+							g fats by body weight kg = {{ macros['days'][day.position - 1]['g_fat_per_kg'] | round(1) }}</label></font>
 							<font color="red"><label class="my-1 mr-2">
 							, kcal = {{ macros['days'][day.position - 1]['ene'] | round(0) }}</label></font>
 						</div>

@@ -25,6 +25,9 @@ class DefaultController extends Controller {
      * @Route("/", name="index")
      */
     public function index() {
+        
+        //echo("DefaultController.php: index()");
+        
         return $this->redirectToRoute('signin');
     }
     /**
