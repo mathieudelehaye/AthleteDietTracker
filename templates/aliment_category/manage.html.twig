@@ -33,7 +33,7 @@
 	   		{% set alimentCounter = 0 %}
 	   		{% for aliment in all_aliments %}
 		   		<div class="form-check">
-		   			<input type="checkbox" id="form_aliment_category_selectedAlimentCategories_{{ alimentCounter }}" name="form[aliment_category][selectedAlimentCategories][]" value="{{ aliment.id }}">	
+		   			<input type="checkbox" class="cb" id="form_aliment_category_selectedAlimentCategories_{{ alimentCounter }}" name="form[aliment_category][selectedAlimentCategories][]" value="{{ aliment.id }}">	
 		   			<label class="my-1">
 		   				{{ aliment.description }}:  
 						{{ aliment.gpro | round(0) }} g pro.,  

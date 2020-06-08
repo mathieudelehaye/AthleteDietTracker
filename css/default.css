@@ -1,10 +1,10 @@
-hr.title {
-	border-top:.5px solid #ad6989;
-}
-
 h1 {
     margin: 10px;
     color: #562349;
+}
+
+hr.title {
+    border-top:.5px solid #ad6989;
 }
 
 h2 {
@@ -33,7 +33,7 @@ a:hover, a:active {
 }
 
 .btn {
-    background-color: #ffa299;
+    background-color: #ad6989;
     border: none;
     color: #fee2b3;
     font-size: 16px;
@@ -48,3 +48,37 @@ a:hover, a:active {
     background-color: #fee2b3;
     color: #ad6989;
 }
+
+.form-control:focus {
+    background-color: #ffa299;
+    color: #fee2b3;
+}
+
+.nav-item.nav-link {
+    background-color: #fee2b3;
+}
+
+.nav-item.nav-link.active.show {
+    background-color: #ffa299;
+    color: #fee2b3;
+}
+
+.list-group-item {
+    background-color: #fee2b3;
+    color: #ad6989;
+}
+
+.cb {
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+/*#fee2b3 yellow
+#ffa299 rose
+#ad6989 purple
+#562349 mauve */
