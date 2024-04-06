@@ -1,5 +1,5 @@
 # Diet_track_PHP
-An application to track diet calories written in PHP with Symfony and Bootstrap 4. 
+An application to track diet calories written in PHP with Symfony and Bootstrap. 
 
 <p float="left">
   <img src="screenshots/screenshot01.jpeg" alt="screenshot01" style="float: left; margin-right: 10px;" width="700" hspace="10" />
