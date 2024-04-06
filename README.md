@@ -2,7 +2,7 @@
 An application to track diet calories written in PHP with Symfony and Bootstrap 4. 
 
 <p float="left">
-  <img src="screenshots/screenshot01.jpeg" alt="screenshot01" style="float: left; margin-right: 10px;" width="800" hspace="10" />
+  <img src="screenshots/screenshot01.jpeg" alt="screenshot01" style="float: left; margin-right: 10px;" width="700" hspace="10" />
 </p>
 
 Run it: 
