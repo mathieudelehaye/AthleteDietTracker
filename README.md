@@ -1,9 +1,9 @@
 # Diet_track_PHP
 An application to track diet calories written in PHP with Symfony and Bootstrap 4. 
 
-Screenshot: 
-
-<img src="Image 6-6-20 at 12.55 PM.jpeg" alt="App_screenshot" style="float: left; margin-right: 10px;" width="800"/>
+<p float="left">
+  <img src="screenshots/screenshot01.jpeg" alt="screenshot01" style="float: left; margin-right: 10px;" width="800" hspace="10" />
+</p>
 
 Run it: 
 
