@@ -18,8 +18,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-// define("DEBUG",1,TRUE); 
-define("DEBUG",0,TRUE); 
+
+define("DEBUG",0); 
+
 class DefaultController extends Controller {
 	/**
      * @Route("/", name="index")
