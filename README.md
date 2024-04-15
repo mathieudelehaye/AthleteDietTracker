@@ -17,7 +17,9 @@ It was later converted into a iPhone application: https://github.com/mathieudele
 
 Run it: 
 
+```
 php composer.phar install
+```
 
 **! Ensure it is possible to write in project sub-directories !** : 
 
