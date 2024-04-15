@@ -24,11 +24,13 @@ In .env file: check that: APP_ENV=dev
 
 Then: 
 ```
-php bin/console cache:clear --no-warmup --env=dev 
+symfony server:start -d
+symfony open:local
+symfony server:stop
 ```
 
 Clear Symfony cache: 
 ```
-php bin/console cache:clear 
+php bin/console cache:clear --no-warmup --env=dev 
 ```
 
