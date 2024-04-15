@@ -1,6 +1,8 @@
 # Diet_track_PHP
 An application to track diet calories written in PHP with Symfony, Doctrine and Bootstrap. 
 
+It was later converted into a iPhone application: https://github.com/mathieudelehaye/FeedMe
+
 <p float="left">
   <img src="screenshots/Screenshot00.png" alt="Screenshot00.png" style="float: left; margin-right: 10px;" width="600" hspace="10" />
 </p>
