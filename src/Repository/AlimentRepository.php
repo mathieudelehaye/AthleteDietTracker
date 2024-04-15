@@ -29,11 +29,11 @@ class AlimentRepository extends ServiceEntityRepository
         ORDER BY a.position ASC 
         ';
         $stmt = $conn->prepare($sql);
-        $stmt->execute([
+        $resultSet = $stmt->execute([
             'athleteId' => $athlete_id, 
             'mealName' => $meal_name
         ]);
-        $alimentsWithCategoryIndexedTab = $stmt->fetchAll();
+        $alimentsWithCategoryIndexedTab = $resultSet->fetchAllAssociative();
         foreach ($alimentsWithCategoryIndexedTab as $aliment) { 
             $output[$aliment["aliment_category_id"]] = $aliment["quantity"];
         }

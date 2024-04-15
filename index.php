@@ -6,7 +6,7 @@ use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
     
 require __DIR__.'/vendor/autoload.php';
-    
+
 // display query string 
 // echo("query string: ".$_SERVER['QUERY_STRING']);
 // exit();
@@ -38,7 +38,6 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
-//echo($request);
 $response = $kernel->handle($request);
 $response->send();
 $kernel->terminate($request, $response);

@@ -29,10 +29,10 @@ class UserRepository extends ServiceEntityRepository
         ORDER BY u.id ASC 
         ';
         $stmt = $conn->prepare($sql);
-        $stmt->execute([
+        $resultSet = $stmt->execute([
             'loginValue' => $login
         ]);
-        $foundUsers = $stmt->fetchAll();
+        $foundUsers = $resultSet->fetchAllAssociative();
         foreach ($foundUsers as $user) { 
             $output = $user;
             break; 
