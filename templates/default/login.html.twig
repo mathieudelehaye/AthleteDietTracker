@@ -7,16 +7,16 @@
 	<form name="form" method="post">
 		<div class="form-inline">
 			<label class="my-1 mr-2">Login:</label>
-			<input class="form-control my-1 mr-2 col-md-2" type="text" id="form_user_login" name="form[user][login]" required="required" value="{{ form.user.login.vars.value }}" />			
+			<input class="form-control input-item my-1 mr-2 col-md-2" type="text" id="form_user_login" name="form[user][login]" required="required" value="{{ form.user.login.vars.value }}" />			
 			<label class="my-1 mr-2">Password:</label>
-			<input class="form-control my-1 mr-2 col-md-2" type="password" id="form_user_password" name="form[user][password]" required="required" value="{{ form.user.password.vars.value }}" />			
+			<input class="form-control input-item my-1 mr-2 col-md-2" type="password" id="form_user_password" name="form[user][password]" required="required" value="{{ form.user.password.vars.value }}" />			
 		</div>
 		<div class="form-inline">
 			<input class="my-1 mr-2" type="checkbox" id="form_user_checkbox" name="form[user][checkbox]" value="1">
 			<label class="my-1">Remember me</label>
 		</div>
 		<div class="form-inline">
-			<button class="btn btn-primary my-1" type="submit" id="form_user_validate" name="form[user][validate]">Log in</button>
+			<button class="btn btn-primary button my-1" type="submit" id="form_user_validate" name="form[user][validate]">Log in</button>
 		</div>
 		<div class="form-inline">
 			<a href="#">Forgot your password?</a>   

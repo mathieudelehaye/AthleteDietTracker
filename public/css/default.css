@@ -1,7 +1,39 @@
-.custom-list-item {
-    background-color: #fee2b3;
+.page-background-color {
+    background-color:#FEECE2;
 }
 
-.selected-list-item {
-    background-color: #d19a5e;
+.page-background-padding {
+    padding: 0.5rem 1rem 2rem 1rem;
+}
+
+.input-item {
+    background-color: #F7DED0;
+}
+
+.button {
+    background-color: #FFBE98;
+    border: #E2BFB3;
+}
+
+.button:active {
+    background-color: #E2BFB3; 
+}
+
+.button:hover {
+    background-color: #E2BFB3; 
+}
+
+.text {
+    color: #495057; 
+}
+
+.light-text {
+    color: #495057; 
+}
+
+/* Nav tabs */
+.nav-tabs .nav-link.active {
+  color: #495057;
+  background-color: #F7DED0;
+  border-color: #dee2e6 #dee2e6 #fff;
 }

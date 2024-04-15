@@ -11,12 +11,13 @@
     	{% endblock %}
 
 		{% block stylesheets %}
-	    	<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" crossorigin="anonymous"/>
-    	{% endblock %}
+			<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" crossorigin="anonymous"/>
+			<link href="{{ asset('css/default.css') }}" rel="stylesheet" crossorigin="anonymous"/>
+		{% endblock %}
 
     	{% block scripts %}{% endblock %}
   </head>
-  <body style="background-color:#fee2b3;">
+  <body class="page-background-color page-background-padding">
     <div id="sidebar">
 		{% block sidebar %}{% endblock %}
 	</div>
