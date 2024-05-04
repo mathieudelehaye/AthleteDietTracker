@@ -18,6 +18,7 @@ It was later converted into a iPhone application: https://github.com/mathieudele
 Run it: 
 
 ```
+php composer.phar update 
 php composer.phar install
 ```
 
