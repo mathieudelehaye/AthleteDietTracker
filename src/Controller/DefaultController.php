@@ -12,22 +12,29 @@ use App\Form\DayType;
 use App\Form\MealType;
 use App\Form\AlimentType;
 use ArrayObject;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Form\ChoiceList\Loader\CallbackChoiceLoader;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 define("DEBUG",0); 
 
-class DefaultController extends Controller {
+class DefaultController extends AbstractController {
+    public function __construct(ManagerRegistry $doctrine)
+    {
+        $this->doctrine = $doctrine;
+    }
+    
 	/**
      * @Route("/", name="index")
      */
     public function index() {
         
         //echo("DefaultController.php: index()");
+        $entityManager = $this->doctrine->getManager();
         
         return $this->redirectToRoute('signin');
     }
@@ -42,7 +49,7 @@ class DefaultController extends Controller {
      */
     public function signIn(Request $request) {
         // Login removed: auto log in 
-        $foundUser = $this->getDoctrine()->getRepository(User::class)->findUserWithLogin('md');
+        $foundUser = $this->doctrine->getRepository(User::class)->findUserWithLogin('md');
         $this->get('session')->set('loginUserId', $foundUser["id"]);
         if($this->get('session')->has('loginUserId')) { 
             return $this->redirectToRoute('manage', array(

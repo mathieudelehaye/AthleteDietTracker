@@ -1,13 +1,14 @@
-
 ###> symfony/framework-bundle ###
-.DS_Store
 /.env.local
 /.env.local.php
 /.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/var/log/
-/var/cache/
+/var/
 /vendor/
+tmp/
+.DS_Store
+php_errors.log
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
@@ -15,11 +16,6 @@
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
-
-###> symfony/web-server-bundle ###
-/.web-server-pid
-###< symfony/web-server-bundle ###
-
 ###> phpunit/phpunit ###
 /phpunit.xml
 .phpunit.result.cache
