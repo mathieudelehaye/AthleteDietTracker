@@ -34,4 +34,5 @@ RUN echo 'export PATH="$HOME/.symfony5/bin:$PATH"' >> "$HOME/.bash_profile"
 
 EXPOSE 80
 
+CMD ["source", '"$HOME/.bash_profile"']
 # CMD ["symfony", "server:start", "-d", "--no-tls"]
