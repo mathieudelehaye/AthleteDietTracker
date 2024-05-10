@@ -29,6 +29,9 @@ WORKDIR /var/www/domain.com/public_html
 # RUN php composer.phar update 
 # RUN php composer.phar install
 
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN echo 'export PATH="$HOME/.symfony5/bin:$PATH"' >> "$HOME/.bash_profile"
+
 EXPOSE 80
 
 # CMD ["symfony", "server:start", "-d", "--no-tls"]
