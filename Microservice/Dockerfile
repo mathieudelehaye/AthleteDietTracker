@@ -1,6 +1,7 @@
 FROM alpine/git as clone
 WORKDIR /app
 RUN git clone https://github.com/mathieudelehaye/AthleteDietTracker .
+RUN RUN git fetch origin && git pull origin master
 
 FROM ubuntu:24.04
 RUN apt-get -y update
