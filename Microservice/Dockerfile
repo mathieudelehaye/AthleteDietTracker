@@ -29,4 +29,5 @@ RUN php composer.phar update
 RUN php composer.phar install
 
 EXPOSE 80
-# CMD ["apachectl", "-D", "FOREGROUND"]
+
+CMD ["symfony", "server:start", "-d", "--no-tls"]
