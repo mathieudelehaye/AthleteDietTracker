@@ -26,8 +26,8 @@ RUN mkdir -p /var/www/domain.com/public_html
 COPY --from=clone /app /var/www/domain.com/public_html
 
 WORKDIR /var/www/domain.com/public_html
-# RUN php composer.phar update 
-# RUN php composer.phar install
+RUN php composer.phar update 
+RUN php composer.phar install
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 
@@ -35,4 +35,4 @@ ENV PATH="~/.symfony5/bin:${PATH}"
 
 EXPOSE 80
 
-# CMD ["symfony", "server:start", "-d", "--no-tls"]
+CMD ["symfony", "server:start", "-d", "--no-tls"]
