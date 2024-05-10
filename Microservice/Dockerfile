@@ -30,9 +30,9 @@ WORKDIR /var/www/domain.com/public_html
 # RUN php composer.phar install
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-RUN echo 'export PATH="$HOME/.symfony5/bin:$PATH"' >> "$HOME/.bash_profile"
+
+ENV PATH="~/.symfony5/bin:${PATH}"
 
 EXPOSE 80
 
-CMD ["source", '"$HOME/.bash_profile"']
 # CMD ["symfony", "server:start", "-d", "--no-tls"]
