@@ -15,6 +15,7 @@ RUN apt-get -y install php8.2
 RUN apt-get -y install php8.2-curl
 RUN apt-get -y install php8.2-mysql
 RUN apt-get -y install php8.2-xml
+RUN apt-get -y install php8.2-zip
 RUN apt-get -y install vim
 RUN apt-get -y install git
 RUN apt-get -y install net-tools
