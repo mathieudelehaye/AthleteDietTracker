@@ -1,4 +1,6 @@
 FROM alpine/git as clone
+RUN rm -rf /app
+RUN mkdir /app
 WORKDIR /app
 RUN git clone https://github.com/mathieudelehaye/AthleteDietTracker .
 RUN git fetch origin && git pull origin master
