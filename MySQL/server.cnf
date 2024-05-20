@@ -1,0 +1,28 @@
+[server]
+
+[mysqld]
+
+user            = mysql
+#pid-file       = /var/run/mysqld/mysqld.pid
+#socket         = /var/run/mysqld/mysqld.sock
+#port           = 3306
+#datadir        = /var/lib/mysql
+# localhost which is more compatible and is not less secure.
+
+# bind any address, including from host and other containers
+bind-address           = 0.0.0.0 
+#bind-address            = 172.17.0.5 #IP Apache server
+#bind-address           = 127.0.0.1
+#mysqlx-bind-address     = 0.0.0.0
+
+# utf8 4-byte character set. See also client.cnf
+key_buffer_size         = 16M
+myisam-recover         = BACKUP
+character-set-server  = utf8mb4
+collation-server      = utf8mb4_general_ci
+
+#log_bin                = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 10
+[embedded]
+[mariadb]
+[mariadb-10.11]
