@@ -13,11 +13,13 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN apt-get -y install software-properties-common # apt-add-repository
 RUN add-apt-repository ppa:ondrej/php # php8.2
+RUN apt-get -y update
 RUN apt-get -y install php8.2
 RUN apt-get -y install php8.2-curl
 RUN apt-get -y install php8.2-mysql
 RUN apt-get -y install php8.2-xml
 RUN apt-get -y install php8.2-zip
+RUN apt-get -y install php8.2-sqlite3
 RUN apt-get -y install vim
 RUN apt-get -y install git
 RUN apt-get -y install net-tools
