@@ -49,7 +49,7 @@ class DefaultController extends AbstractController {
      */
     public function signIn(Request $request) {
         // Login removed: auto log in 
-        $foundUser = $this->doctrine->getRepository(User::class)->findUserWithLogin('md');
+        $foundUser = $this->doctrine->getRepository(User::class)->findUserWithLogin('mdelehaye');
         $this->get('session')->set('loginUserId', $foundUser["id"]);
         if($this->get('session')->has('loginUserId')) { 
             return $this->redirectToRoute('manage', array(
@@ -101,6 +101,7 @@ class DefaultController extends AbstractController {
         } else {
             $user_id = $this->get('session')->get('loginUserId'); 
         }
+        // echo("<br/>"); var_dump($user_id); 
         // find linked entities (athlete, day, meal, aliments) 
         if($athlete_id != 0) {
             $athlete = $this->getDoctrine()->getRepository(Athlete::class)->find($athlete_id);
@@ -220,7 +221,8 @@ class DefaultController extends AbstractController {
             'label' => 'Sign Out'
         )); 
         $form = $formBuilder->getForm();
-        // var_dump(array_keys($form->all())); 
+        var_dump(array_keys($form->all())); 
+        var_dump($form->get('athlete')->get('selectedAthlete')->getData());
         // handle POST request 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

@@ -35,9 +35,9 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash
 ENV PATH="~/.symfony5/bin:${PATH}"
 
 WORKDIR /var/www/domain.com/public_html
-# RUN php composer.phar update 
-# RUN php composer.phar install
+RUN php composer.phar update 
+RUN php composer.phar install
 
 EXPOSE 80
 
-# CMD ["symfony", "server:start", "-d", "--no-tls"]
+CMD ["symfony", "server:start", "-d", "--no-tls"]
