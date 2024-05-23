@@ -28,6 +28,7 @@ RUN apt-get -y install iputils-ping
 RUN apt-get -y install curl 
 RUN apt-get -y install wget 
 
+RUN rm -rf /var/www/domain.com/public_html
 RUN mkdir -p /var/www/domain.com/public_html
 COPY --from=clone /app /var/www/domain.com/public_html
 
