@@ -10,6 +10,7 @@ EXPOSE 3306 5432
 COPY server.cnf /etc/mysql/mariadb.conf.d/server.cnf
 COPY mysqld_safe.cnf /etc/mysql/mariadb.conf.d/mysqld_safe.cnf
 COPY service.sh /App/service.sh
+COPY data_backup.sql /App/data_backup.sql
 WORKDIR /App
 RUN chmod +x /App/service.sh
 CMD ["./service.sh"]

@@ -8,5 +8,9 @@ mysql  -u root <<EOF
      CREATE USER 'test2070'@'%' IDENTIFIED BY 'password';
      GRANT ALL PRIVILEGES ON *.* TO 'test2070'@'%';
      FLUSH PRIVILEGES;
+     CREATE DATABASE athlete_diet;
 EOF
+
+mysql -u root -p athlete_diet < data_backup.sql
+
 /bin/bash
