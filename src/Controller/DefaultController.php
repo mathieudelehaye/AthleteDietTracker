@@ -221,13 +221,13 @@ class DefaultController extends AbstractController {
             'label' => 'Sign Out'
         )); 
         $form = $formBuilder->getForm();
-        var_dump(array_keys($form->all())); 
-        var_dump($form->get('athlete')->get('selectedAthlete')->getData());
+        // var_dump(array_keys($form->all())); 
+        // var_dump($form->get('athlete')->get('selectedAthlete')->getData());
         // handle POST request 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             if ($form->get('athlete')->get('select')->isClicked()) {
-                var_dump($form->get('athlete')->get('selectedAthlete')->getData()); 
+                // var_dump($form->get('athlete')->get('selectedAthlete')->getData()); 
                 return $this->redirectToRoute('manage', array(
                     'athlete_id' => $form->get('athlete')->get('selectedAthlete')->getData(), 
                     'day_id' => 0, 
