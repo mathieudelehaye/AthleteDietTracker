@@ -41,4 +41,4 @@ RUN php composer.phar install
 
 EXPOSE 80
 
-CMD ["symfony", "server:start", "-d", "--no-tls"]
+# CMD ["symfony", "server:start", "-d", "--no-tls"]
