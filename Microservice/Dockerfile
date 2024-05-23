@@ -32,7 +32,7 @@ RUN mkdir -p /var/www/domain.com/public_html
 COPY --from=clone /app /var/www/domain.com/public_html
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash
-ENV PATH="~/.symfony5/bin:${PATH}"
+ENV PATH="/root/.symfony5/bin:${PATH}"
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 WORKDIR /var/www/domain.com/public_html
@@ -41,4 +41,4 @@ RUN php composer.phar install
 
 EXPOSE 80
 
-# CMD ["~/.symfony5/bin/symfony", "server:start", "-d", "--no-tls"]
+CMD ["symfony", "server:start", "-d", "--no-tls"]
