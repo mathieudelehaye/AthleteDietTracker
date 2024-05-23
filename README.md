@@ -15,35 +15,14 @@ It was later converted into a iPhone application: https://github.com/mathieudele
   <img src="screenshots/Screenshot02.png" alt="Screenshot02.png" style="float: left; margin-right: 10px;" width="600" hspace="10" />
 </p>
 
-Run it: 
+Run it as a microservice: 
 
 ```
-php composer.phar update 
-php composer.phar install
+docker build --no-cache -t mariadb_image MySQL/
+docker run -it -d --name maria_container -p 12345:3306 mariadb_image
+
+docker build --no-cache -t diet_tracker_image Microservice/
+docker run -it -d --name diet_tracker_container -p 8081:8000 diet_tracker_image
 ```
 
-**! Ensure it is possible to write in project sub-directories !** : 
-
-```
-sudo chmod -R 777 .
-```
-
-Install Symfony Profiler:
-```
-php composer.phar require --dev symfony/profiler-pack
-```
-
-In .env file: check that: APP_ENV=dev
-
-Then: 
-```
-symfony server:start -d
-symfony open:local
-symfony server:stop
-```
-
-Clear Symfony cache: 
-```
-php bin/console cache:clear --no-warmup --env=dev 
-```
-
+Then connect to the `http://localhost:8081/` address.
