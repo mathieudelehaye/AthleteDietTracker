@@ -11,6 +11,6 @@ mysql  -u root <<EOF
      CREATE DATABASE athlete_diet;
 EOF
 
-mysql -u root -p athlete_diet < data_backup.sql
+mysql -u root -ppassword athlete_diet < data_backup.sql
 
 /bin/bash
