@@ -20,13 +20,6 @@ This is a **monolith application** that serves both frontend and backend logic i
 
 ---
 
-## 📱 iOS Version
-
-This project was later adapted into a native iPhone app:  
-👉 [FeedMe (iOS App)](https://github.com/mathieudelehaye/FeedMe)
-
----
-
 ## 🖼️ Screenshots
 
 <p float="left">
