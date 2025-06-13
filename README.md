@@ -1,32 +1,57 @@
-# Diet_track_PHP
-An application to track diet calories for an athele.
+# 🥗 Diet Tracker PHP (Monolith Web App)
 
-It is written in PHP with Symfony, Doctrine and Bootstrap. It uses Docker to run as a microservice. 
+A lightweight **monolithic web application** to track calorie intake for athletes.
 
-The database is a MySQL (MariaDB). It runs in a separate Docker container and communicates via the bridge network.
+Built with:
+- PHP (using **Symfony** framework)
+- **Doctrine** ORM
+- **Bootstrap** for styling
+- **Docker** for containerized deployment
 
-The same application was later converted into a iPhone application: https://github.com/mathieudelehaye/FeedMe
+---
+
+## 🧱 Architecture
+
+This is a **monolith application** that serves both frontend and backend logic in one deployable unit. It returns dynamic HTML/CSS directly from the PHP backend.
+
+- 📦 The **web app** runs in a Docker container with **Apache**
+- 🗄️ The **MySQL database** (MariaDB) runs in a separate container
+- 🔗 Communication happens over a Docker **bridge network**
+
+---
+
+## 📱 iOS Version
+
+This project was later adapted into a native iPhone app:  
+👉 [FeedMe (iOS App)](https://github.com/mathieudelehaye/FeedMe)
+
+---
+
+## 🖼️ Screenshots
 
 <p float="left">
-  <img src="screenshots/Screenshot00.png" alt="Screenshot00.png" style="float: left; margin-right: 10px;" width="600" hspace="10" />
+  <img src="screenshots/Screenshot00.png" alt="Screenshot 0" width="600" />
 </p>
 
 <p float="left">
-  <img src="screenshots/Screenshot01.png" alt="Screenshot01.png" style="float: left; margin-right: 10px;" width="600" hspace="10" />
+  <img src="screenshots/Screenshot01.png" alt="Screenshot 1" width="600" />
 </p>
 
 <p float="left">
-  <img src="screenshots/Screenshot02.png" alt="Screenshot02.png" style="float: left; margin-right: 10px;" width="600" hspace="10" />
+  <img src="screenshots/Screenshot02.png" alt="Screenshot 2" width="600" />
 </p>
 
-Run it: 
+---
 
-```
+## 🚀 Run Locally
+
+To run the app using Docker:
+
+```bash
+# Build and run the MariaDB container
 docker build --no-cache -t mariadb_image MySQL/
 docker run -it -d --name maria_container -p 12345:3306 mariadb_image
 
+# Build and run the PHP diet tracker container
 docker build --no-cache -t diet_tracker_image Microservice/
 docker run -it -d --name diet_tracker_container -p 8081:8000 diet_tracker_image
-```
-
-Then connect to the `http://localhost:8081/` address.
